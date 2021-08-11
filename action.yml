@@ -1,0 +1,14 @@
+name: Redoxer
+description: 'Run a redoxer subcommand'
+inputs:
+  command:
+    description: 'Redoxer command to run'
+    required: true
+  args:
+    description: 'Args to pass to redoxer subcommand'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.args }}
